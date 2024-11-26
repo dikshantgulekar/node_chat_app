@@ -9,13 +9,22 @@ import cors from 'cors';
 const app = express();
 
 const httpServer = createServer(app);
-const io = new Server(httpServer);
+const io = new Server(httpServer, {
+    cors: {
+        origin: "https://dikshant-node-chat-app.onrender.com", // Replace "*" with your Render URL for better security
+        methods: ["GET", "POST"],
+    },
+});
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
-app.use(cors())
-
+app.use(
+    cors({
+        origin: "*", // Allow all origins (can be restricted to specific domains if needed)
+        methods: ["GET", "POST"],
+    })
+);
 app.use(express.static(path.join(__dirname, 'public')));
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
