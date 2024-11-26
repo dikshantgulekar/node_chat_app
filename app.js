@@ -44,9 +44,9 @@ io.on('connection', (socket) => {
     socket.on('feedback' , (data)=>{
         io.emit('feedback', data)
     })
-});
+}); 
 
-const PORT = 4000;
+const PORT = process.env.PORT || 4000; 
 httpServer.listen(PORT, () => {
     console.log(`Server Running on http://localhost:${PORT}`);
 });
