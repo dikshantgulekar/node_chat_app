@@ -1,0 +1,186 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "Poppins", sans-serif;
+    display: grid;
+    place-items: center;
+    background: linear-gradient(to top, rgb(126, 34, 206), black);
+    min-height: 100vh;
+    padding: 8px;
+}
+
+.title {
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+    color: white;
+    margin-bottom: 8px; /* Adjusted margin */
+}
+
+.main {
+    border: solid 8px rgb(100, 11, 141);
+    border-radius: 24px;
+    overflow: hidden;
+    width: 90%; /* Adjusted width to fit within the screen */
+    max-width: 500px; /* Set a max-width for desktop */
+    height: 450px; /* Set height to 450px */
+    display: flex;
+    flex-direction: column;
+    background: rgb(12, 10, 9);
+}
+
+.name {
+    display: flex;
+    font-size: 24px;
+    font-weight: 700;
+    padding: 8px 16px;
+    background-color: rgb(12, 10, 9);
+    border: none;
+    color: white;
+    margin-bottom: 4px; /* Adjusted margin */
+}
+
+.name > span {
+    color: rgb(109, 40, 217);
+}
+
+.name-input {
+    font-size: 18px;
+    font-weight: 700;
+    color: white;
+    flex-grow: 1;
+    background: rgb(12, 10, 9);
+    outline: none;
+    border: none;
+    margin: 0px 12px;
+}
+
+.message-container {
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(12, 10, 9);
+    flex-grow: 1;
+    overflow-y: auto; /* Allow scrolling for message container */
+    width: 100%;
+    padding: 12px;
+    border-bottom: 2px solid rgb(100, 11, 141);
+}
+
+.message-left,
+.message-right {
+    list-style: none;
+    padding: 8px 12px;
+    margin: 12px;
+    max-width: 70%; /* Reduce width for better layout */
+    font-size: 16px;
+    word-wrap: break-word;
+}
+
+.message-left {
+    border-radius: 20px 20px 20px 0;
+    align-self: flex-start;
+    background: rgb(0, 0, 0);
+    box-shadow: -2px 2px 4px #fff;
+    color: #FFFF;
+}
+
+.message-right {
+    border-radius: 20px 0 20px 20px;
+    align-self: flex-end;
+    background: linear-gradient(to bottom, rgb(192, 38, 211), rgb(147, 51, 234));
+    box-shadow: -2px 2px 4px #fff;
+    color: #FFFF;
+}
+
+.message-left > p > span,
+.message-right > p > span {
+    display: block;
+    font-size: 12px;
+    font-style: italic;
+    margin-top: 4px;
+}
+
+.feedback {
+    font-style: italic;
+    font-size: 14px;
+    padding: 0px 16px 16px 16px;
+    color: rgb(109, 40, 217);
+    text-align: center;
+}
+
+.message-form {
+    display: flex;
+    justify-content: space-between;
+    padding: 8px 16px;
+    background-color: rgb(12, 10, 9);
+    border-top: 2px solid rgb(100, 11, 141);
+}
+
+.message-input {
+    flex-grow: 1;
+    height: 48px;
+    font-size: 16px;
+    border: none;
+    outline: none;
+    padding: 0 12px;
+    background-color: rgb(63, 63, 70);
+    color: #FFFF;
+}
+
+.send-button {
+    height: 48px;
+    font-size: 16px;
+    border: none;
+    padding: 0px 20px;
+    outline: none;
+    background-color: rgb(12, 10, 9);
+    cursor: pointer;
+}
+
+.send-button span {
+    color: rgb(109, 40, 217);
+}
+
+/* Responsive Styles */
+@media only screen and (max-width: 575px) {
+    .main {
+        width: 100%; /* Full width for mobile */
+        max-width: 100%; /* Full width for mobile */
+        height: 450px; /* Keep the same height for mobile */
+    }
+
+    .message-container {
+        width: 100%;
+        max-height: 350px; /* Adjust max height for mobile */
+        overflow-y: auto; /* Allow scrolling for mobile */
+    }
+
+    .message-form {
+        width: 100%;
+        padding: 8px 16px;
+    }
+
+    .name {
+        font-size: 20px;
+        padding: 8px;
+    }
+
+    .message-left,
+    .message-right {
+        max-width: 90%; /* Adjust width for mobile */
+    }
+
+    .message-input {
+        font-size: 14px;
+    }
+
+    .send-button {
+        font-size: 14px;
+    }
+}

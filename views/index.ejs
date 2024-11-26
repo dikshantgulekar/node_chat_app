@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css" integrity="sha512-5Hs3dF2AEPkpNAR7UiOHba+lRSJNeM2ECkwxUIxC1Q/FLycGTbNapWXB4tP889k5T5Ju8fs4b1P5z/iB4nMfSQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="/style.css">
+    <title>CHAT APP</title>
+</head>
+<body>
+    <h1 class="title">CHAT APP <span><i class="fa-solid fa-comment-dots"></i></span></h1>
+
+    <div class="main">
+        <div class="name">
+            <span><i class="fa-regular fa-user"></i></span>
+            <input type="text" class="name-input" id="name-input" value="USER" maxlength="20"/>
+        </div>
+
+        <ul class="message-container" id="message-container">
+            <li class="message-left">
+                <p class="message">
+                    Hii
+                    <span>user  26/11 12:00</span>
+                </p>
+            </li>
+
+        
+            <li class="message-right">
+                <p class="message">
+                    Hello
+                    <span>user2  26/11 12:02</span>
+                </p>
+            </li>
+
+            <li class="message-feedback ">
+                <p class="feedback" id="feedback">
+                    user is typing...
+                </p>
+            </li>
+        </ul>
+
+        
+
+        <form class="message-form" id="message-form">
+            <input type="text" name="message" id="message-input"  class="message-input">
+            <div class="divider"></div>
+            <button type="submit" class="send-button">
+                <span><i class="fa-solid fa-paper-plane"></i></span>
+            </button>
+        </form>
+
+       
+    </div>
+    <h3 class="client-total" id="client-total">
+        TOTAL USERS : 
+    </h3>
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="/main.js"></script>
+</body>
+</html>
