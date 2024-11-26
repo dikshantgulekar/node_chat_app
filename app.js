@@ -4,6 +4,7 @@ import { fileURLToPath } from "url";
 import chatRoute from "./routes/chatRoute.js";
 import { createServer } from "http";
 import { Server } from "socket.io";
+import cors from 'cors';
 
 const app = express();
 
@@ -12,6 +13,8 @@ const io = new Server(httpServer);
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
+
+app.use(cors())
 
 app.use(express.static(path.join(__dirname, 'public')));
 app.set('views', path.join(__dirname, 'views'));
